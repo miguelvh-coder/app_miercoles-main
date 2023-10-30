@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../../../domain/models/history.dart';
 
 class HistorySource {
-  final String apiKey = 'GTakIp';
+  final String apiKey = '95ifza';
 
   Future<bool> saveSession(History history) async {
     logInfo("Web service, saving history");

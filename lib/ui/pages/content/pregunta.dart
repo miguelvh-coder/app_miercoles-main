@@ -8,7 +8,7 @@ import '../../widgets/botones.dart';
 import 'package:app_oper/ui/controllers/progresion.dart';
 import 'package:app_oper/ui/controllers/result_writer.dart';
 import 'package:app_oper/ui/controllers/answer.dart';
-import 'package:app_oper/ui/controllers/dificultad.dart';
+//import 'package:app_oper/ui/controllers/dificultad.dart';
 import 'package:app_oper/ui/pages/content/end_page.dart';
 
 class CalculatorApp extends StatelessWidget {
@@ -51,8 +51,8 @@ class _CalculatorState extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
-    Dificultad controller = Get.find();
-    Answer controller2 = Get.find();
+    //Dificultad controller = Get.find();
+    //Answer controller2 = Get.find();
     Resultwriter controller3 = Get.find();
     Progresion tempo = Get.find();
 

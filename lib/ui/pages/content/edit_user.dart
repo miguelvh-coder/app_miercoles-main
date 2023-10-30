@@ -25,17 +25,17 @@ class _EditUserPageState extends State<EditUserPage> {
   @override
   Widget build(BuildContext context) {
     UserController userController = Get.find();
-    controllerFirstName.text = user.firstName;
-    controllerLastName.text = user.lastName;
+    controllerFirstName.text = user.firstname;
+    controllerLastName.text = user.lastname;
     controllerEmail.text = user.email;
-    controllerColegio.text = user.colegio;
-    controllerFn.text = user.fN;
-    controllerGrado.text = user.grado;
-    controllerDifficult.text = user.difficult;
+    controllerColegio.text = user.school;
+    controllerFn.text = user.birthday;
+    controllerGrado.text = user.course;
+    controllerDifficult.text = user.diff;
     controllerPassword.text = user.password;
     return Scaffold(
       appBar: AppBar(
-        title: Text("${user.firstName} ${user.lastName}"),
+        title: Text("${user.firstname} ${user.lastname}"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -126,13 +126,13 @@ class _EditUserPageState extends State<EditUserPage> {
                             await userController.updateUser(User(
                                 id: user.id,
                                 email: controllerEmail.text,
-                                firstName: controllerFirstName.text,
-                                lastName: controllerLastName.text,
-                                colegio: controllerColegio.text,
-                                fN: controllerFn.text,
-                                difficult: controllerDifficult.text,
+                                firstname: controllerFirstName.text,
+                                lastname: controllerLastName.text,
+                                school: controllerColegio.text,
+                                birthday: controllerFn.text,
+                                diff: controllerDifficult.text,
                                 password: controllerPassword.text,
-                                grado: controllerGrado.text,
+                                course: controllerGrado.text,
 
                                 ));
                             Get.back();

@@ -1,4 +1,4 @@
-import 'package:app_oper/ui/pages/content/user_list.dart';
+//import 'package:app_oper/ui/pages/content/user_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'signup.dart';
@@ -6,12 +6,19 @@ import 'package:loggy/loggy.dart';
 import '../../controllers/authentication_controller.dart';
 // Asegúrate de importar UserListPage correctamente
 
-class LoginPage extends StatelessWidget {
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _emailController =
-      TextEditingController(text: 'a@a.com');
-  final TextEditingController _passwordController =
-      TextEditingController(text: '123456');
+  final TextEditingController _emailController = TextEditingController(text: 'a@a.com');
+  final TextEditingController _passwordController = TextEditingController(text: '123456');
 
   AuthenticationController authenticationController = Get.find();
 
@@ -43,17 +50,12 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Login with email",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  const Text("Login with email", style: TextStyle(fontSize: 20),),
+                  const SizedBox(height: 20,),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
-                    decoration: InputDecoration(labelText: "Email address"),
+                    decoration: const InputDecoration(labelText: "Email address"),
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Enter email";
@@ -63,12 +65,10 @@ class LoginPage extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20,),
                   TextFormField(
                     controller: _passwordController,
-                    decoration: InputDecoration(labelText: "Password"),
+                    decoration: const InputDecoration(labelText: "Password"),
                     obscureText: true,
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -79,9 +79,7 @@ class LoginPage extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20,),
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -89,7 +87,7 @@ class LoginPage extends StatelessWidget {
                         _login(_emailController.text, _passwordController.text);
                       }
                     },
-                    child: Text("Submit"),
+                    child: const Text("Submit"),
                   ),
                 ],
               ),
@@ -98,7 +96,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 Get.to(() => SignUp());
               },
-              child: Text("Create account"),
+              child: const Text("Create account"),
             )
           ],
         ),

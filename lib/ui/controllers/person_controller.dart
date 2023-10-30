@@ -2,10 +2,10 @@ import 'package:get/get.dart';
 
 class PersonController extends GetxController {
   RxInt id = 0.obs;
-  RxInt difficult = 1.obs;
+  RxInt diff = 1.obs;
   RxString email = "".obs;
-  RxString firstName = "".obs;
-  RxString lastName = "".obs;
+  RxString firstname = "".obs;
+  RxString lastname = "".obs;
   RxString birthday = "".obs;
   RxString course = "".obs;
   RxString password = "".obs;
@@ -22,17 +22,17 @@ class PersonController extends GetxController {
     String firstname = data['firstname'].toString();
     String school = data['school'].toString();
     this.id.value = id;
-    difficult.value = int.parse(diff);
+    this.diff.value = int.parse(diff);
     this.email.value = email;
     this.course.value = course;
     this.birthday.value = birthday;
-    lastName.value = lastname;
+    this.lastname.value = lastname;
     this.password.value = password;
-    firstName.value = firstname;
+    this.firstname.value = firstname;
     this.school.value = school;
   }
 
   updateDifficult(int a) {
-    difficult.value = a;
+    diff.value = a;
   }
 }

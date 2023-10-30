@@ -14,7 +14,8 @@ class AuthenticationDatatasource {
         "password": password,
       }),
     );
-    print("a");
+    print(email);
+    print(password);
     logInfo(response.statusCode);
     if (response.statusCode == 200) {
       logInfo(response.body);

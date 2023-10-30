@@ -10,14 +10,14 @@ class LocalDataSource {
 
   Future<void> addElement(User entry) async {
     Hive.box('user').add(SomeData(
-        firstName: entry.firstName,
-        lastName: entry.lastName,
+        firstname: entry.firstname,
+        lastname: entry.lastname,
         correo: entry.email,
-        school: entry.colegio,
-        course: entry.grado,
-        birthday: entry.fN,
+        school: entry.school,
+        course: entry.course,
+        birthday: entry.birthday,
         password: entry.password,
-        difficult: entry.difficult));
+        diff: entry.diff));
   }
   Future<bool> getUser(String email, String password) async {
     List<User> usuarios = await getAll();
@@ -41,14 +41,14 @@ class LocalDataSource {
   Future<List<User>> getAll() async {
     return Hive.box('user').values.map((e) => User(
       id: e.key as int,
-      firstName: e.firstName,
-      lastName: e.lastName,
+      firstname: e.firstname,
+      lastname: e.lastname,
       email: e.correo,
-      colegio: e.school,
-      grado: e.course,
-      fN: e.birthday,
+      school: e.school,
+      course: e.course,
+      birthday: e.birthday,
       password: e.password,
-      difficult: e.difficult,
+      diff: e.diff,
     )).toList();
   }
   Future<void> deleteAll() async {
@@ -62,13 +62,13 @@ class LocalDataSource {
 
   Future<void> updateEntry() async {
     Hive.box('user').put(perController.id, User(
-        firstName: perController.firstName.value,
-        lastName: perController.lastName.value,
+        firstname: perController.firstname.value,
+        lastname: perController.lastname.value,
         email: perController.email.value,
-        colegio: perController.school.value,
-        grado: perController.course.value,
-        fN: perController.birthday.value,
+        school: perController.school.value,
+        course: perController.course.value,
+        birthday: perController.birthday.value,
         password: perController.password.value,
-        difficult: perController.difficult.value.toString(),));
+        diff: perController.diff.value.toString(),));
   }
 }

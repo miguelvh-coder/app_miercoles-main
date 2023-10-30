@@ -18,12 +18,12 @@ class SomeDataAdapter extends TypeAdapter<SomeData> {
     };
     return SomeData(
       correo: fields[0] as String,
-      firstName: fields[2] as String,
-      lastName: fields[3] as String,
+      firstname: fields[2] as String,
+      lastname: fields[3] as String,
       birthday: fields[4] as String,
       course: fields[5] as String,
       password: fields[1] as String,
-      difficult: fields[6] as String,
+      diff: fields[6] as String,
       school: fields[7] as String,
     );
   }
@@ -37,15 +37,15 @@ class SomeDataAdapter extends TypeAdapter<SomeData> {
       ..writeByte(1)
       ..write(obj.password)
       ..writeByte(2)
-      ..write(obj.firstName)
+      ..write(obj.firstname)
       ..writeByte(3)
-      ..write(obj.lastName)
+      ..write(obj.lastname)
       ..writeByte(4)
       ..write(obj.birthday)
       ..writeByte(5)
       ..write(obj.course)
       ..writeByte(6)
-      ..write(obj.difficult)
+      ..write(obj.diff)
       ..writeByte(7)
       ..write(obj.school);
   }
